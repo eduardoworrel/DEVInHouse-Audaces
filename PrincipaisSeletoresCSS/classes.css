@@ -1,0 +1,19 @@
+body{
+    background-color: aquamarine;
+}
+
+div{
+    padding: 20px;
+    background-color: bisque;
+}
+
+.vermelha{
+    background-color: firebrick;
+    color: white;
+}
+
+.grande{
+    height: 90px;
+}
+
+
