@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoply</title>
+    <style>
+        body{
+           margin:0;
+        }
+        #primeiraNavegacao{
+            width:100%;
+            height:70px;
+            background: #66B379;
+            padding-top:30px;
+        }
+        #segundaNavegacao{
+            width:100%;
+            height:70px;
+            background-color:#7EDE97;
+        }
+        #buscaPrincipal{
+            width:68%;
+            float:left;
+            padding:15px;
+        }
+
+        #buscaPrincipal input{
+            width: 90%;
+            padding:6px;
+            border-radius:5px;
+            border-style:none;
+            
+        }
+        .butaoNavegacaoPrincipal{
+            padding:15px;
+            width:10%;
+            float:left;
+        }
+
+        #menuSecundario ul li{
+            display:inline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="primeiraNavegacao">
+            <div id="buscaPrincipal">
+                <input type="search" placeholder="I am looking for...">
+            </div>
+            <div class="butaoNavegacaoPrincipal">
+                <a>Sign in</a>
+            </div>
+            <div class="butaoNavegacaoPrincipal">
+                <a>Cart</a>
+            </div>
+        </nav>
+        <section id="segundaNavegacao">
+            <div style="width:30%; float:left; display:flex; justify-content: center;align-items: center ;">
+                <a>Departaments</a>
+            </div>
+            <nav  style="width:70%; float:left" id="menuSecundario">
+                <ul>
+                    <li><a>Account</a></li>
+                    <li><a>Deals</a></li>
+                    <li><a>Registry</a></li>
+                    <li><a>Sell</a></li>
+                    <li><a>Help</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+</body>
+</html>
