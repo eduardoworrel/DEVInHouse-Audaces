@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <ul id="lista"></ul>
+    <script>
+        //crio o elemento
+        const li = document.createElement("li");
+        li.innerText = "texto dinamico";
+        //obtenho a lista existente
+        const lista = document.querySelector("#lista");
+        //injeto o elemento criado a um elemento ja existente
+        lista.append(li);
+      
+        li.style.padding = "30px";
+        li.style.border = "5px solid black";
+
+    </script>
+</body>
+</html>
+
+
