@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <table>
+            <tr>
+                <th>texto1</th>
+                <th>texto1</th>
+                <th>texto1</th>
+            </tr>
+        </table>
+    </main>
+    <script>
+        var main = document.querySelector("main");
+        
+     
+
+
+
+        
+        var table = document.createElement("table");
+        main.append(table);
+
+        var titulo = document.createElement("h1");
+        titulo.innerText = "Título";
+        main.append(titulo)
+       
+       
+        main.append(document.createElement("th").style.background = "black")
+ 
+
+
+        var linha = document.createElement("tr");
+
+        var tableHeader1 = document.createElement("th");
+        tableHeader1.innerText = "texto1"
+        linha.append(tableHeader1)
+        table.append(linha)
+        
+        setTimeout(()=>{
+            titulo.style.fontSize = "100px";
+           
+            var tableHeader2 = document.createElement("th");
+            tableHeader2.innerText = "texto2"
+            linha.append(tableHeader2)
+        },3000);
+        
+       
+        setTimeout(()=>{
+
+            titulo.style.borderBottom = "5px solid red";
+           
+
+            var tableHeader3 = document.createElement("th");
+            tableHeader3.innerText = "texto3"
+            linha.append(tableHeader3)
+        },6000);
+        
+
+
+    </script>
+</body>
+</html>
