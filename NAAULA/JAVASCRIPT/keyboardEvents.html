@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input autofocus="true" type="text" id="texto">
+    <script>
+        const input = document.querySelector("#texto")
+        function foiPrecionada(event){
+           if(event.key == "b"){
+               document.body.style.background = "black"
+           }
+        }
+
+        input.addEventListener("key", foiPrecionada)
+    </script>
+</body>
+</html>

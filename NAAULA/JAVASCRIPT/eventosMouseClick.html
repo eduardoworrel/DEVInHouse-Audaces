@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            padding-top: 100px;
+        }
+
+        main div {
+            margin: 0 auto;
+            height: 500px;
+            width: 500px;
+            background-color: darkgoldenrod;
+        }
+
+        button {
+            min-width: 30px;
+            height: 30px;
+            background-color: darkorange;
+            color: white;
+            font-weight: 800;
+        }
+
+        .novoElemento{
+            min-width: 30px;
+            height: 30px;
+            background-color: darkorange;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="elementoCentral"></div>
+    </main>
+    <div style="right: 50%; position:fixed; bottom:30px;">
+        <button id="cresce">+</button>
+        <button id="diminui">-</button>
+        <button id="circular">circular</button>
+        <button id="quadriculado">quadriculado</button>
+        <button id="novo">Cria novo</button>
+        <input id="forneceCor" type="color"> 
+        <button id="alteraCor">AlteraCor</button>
+    </div>
+    <script>
+        let tamanho = 500;
+        let arredondamentoOriginal = 0;
+
+        const main = document.querySelector("main");
+        const elementoCentral = document.querySelector("#elementoCentral");
+      
+        const btnCresce = document.querySelector("#cresce")
+        const btnDiminui = document.querySelector("#diminui")
+        const btnCircula = document.querySelector("#circular")
+        const btnEnquadra = document.querySelector("#quadriculado")
+        const btnNovo = document.querySelector("#novo")
+
+        function cresce(um) {
+            console.log(um)
+            tamanho = tamanho + 70;
+
+            let valorJaNoFormatoAdequado = tamanho + "px";
+            elementoCentral.style.height = valorJaNoFormatoAdequado
+            elementoCentral.style.width = valorJaNoFormatoAdequado
+        }
+        function diminui(primeiroParametro) {
+            console.log(primeiroParametro)
+            tamanho = tamanho - 70;
+
+            let valorJaNoFormatoAdequado = tamanho + "px";
+
+            elementoCentral.style.height = valorJaNoFormatoAdequado
+            elementoCentral.style.width = valorJaNoFormatoAdequado
+
+        }
+        function circula(evento) {
+            console.log(evento)
+            arredondamentoOriginal = arredondamentoOriginal + 5;
+            elementoCentral.style.borderRadius = arredondamentoOriginal + "px";
+        }
+        function enquadra(x) {
+            console.log(x);
+            arredondamentoOriginal = arredondamentoOriginal - 5;
+            elementoCentral.style.borderRadius = arredondamentoOriginal + "px";
+        }
+        function novo(event){
+            console.log(event.target)
+            const div = document.createElement("div");
+            div.classList.add("novoElemento")
+            main.append(div);
+        }
+
+        
+        btnCresce.addEventListener("click", cresce)
+        btnDiminui.addEventListener("click", diminui)
+
+        btnCircula.addEventListener("click", circula)
+        btnEnquadra.addEventListener("click", enquadra)
+        
+        btnNovo.addEventListener("click", novo)
+    
+    
+        const forneceCor = document.querySelector("#forneceCor");
+        const btnAlteraCor = document.querySelector("#alteraCor")
+        const btnCor = document.querySelector("#cresce")
+     
+        function alteraCorAgora(){
+            let cor = forneceCor.value;
+            elementoCentral.style.backgroundColor = cor;
+        }
+
+        btnAlteraCor.addEventListener("click", alteraCorAgora)
+        
+    </script>
+</body>
+
+</html>
