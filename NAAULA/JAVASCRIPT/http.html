@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>Seu nome está na posição <span id="rank"></span> do Brasil. </b><br>
+    <b><span id="ufMax"></span> é o lugar com mais <span id="nome"></span>s </b>
+    
+    <script>
+
+
+         let spanRank = document.querySelector("#rank");
+         let spanUfMax = document.querySelector("#ufMax");
+         let spanNome = document.querySelector("#nome");
+        
+        const url = "https://servicodados.ibge.gov.br/api/v1/censos/nomes/basica?nome=Eduardo";
+        
+        fetch(url)
+        .then(function (resposta){
+            return resposta.json();
+        })
+        .then(function (json){
+            manipulaAposRequisicao(json)
+        });
+
+        function manipulaAposRequisicao(json){
+            const informacoesDoMeuNome = json[0]
+           
+            spanRank.innerText = informacoesDoMeuNome.rank;
+            spanNome.innerText = informacoesDoMeuNome.nome;
+            spanUfMax.innerText = informacoesDoMeuNome.ufMax;
+        }
+    </script>
+</body>
+</html>
