@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="descricao"></textarea>
+
+    <input type="color" id="cor">
+
+    <button>Salvar nova cor de fundo</button>
+    <script>
+
+        const talvezTenhaValorConjunto = localStorage.getItem("conjuntoDeValores")
+        if(talvezTenhaValorConjunto != null){
+            const objConjuntoValores = JSON.parse(talvezTenhaValorConjunto);
+
+            defineCorETexto(objConjuntoValores.corDeFundo
+            ,objConjuntoValores.descricao)
+        }
+
+
+        function defineCorETexto(cor,texto){
+            document.body.style.background = cor;
+            document.body.innerText += texto;
+            
+        }
+
+       var butaoEnviar = document.querySelector("button")
+        butaoEnviar.addEventListener("click",
+        function(){
+            const cor = document.querySelector("#cor").value;
+            const desc = document.querySelector("#descricao").value;
+            defineCorETexto(cor,desc)
+            const conjunto = {
+                "corDeFundo":cor,
+                "descricao":desc,
+            }
+        
+            const conjuntoEmString = JSON.stringify(conjunto);
+
+            localStorage.setItem("conjuntoDeValores",conjuntoEmString)
+
+        })
+    </script>
+</body>
+</html>

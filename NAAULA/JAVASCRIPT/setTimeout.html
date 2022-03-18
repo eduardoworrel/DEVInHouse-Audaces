@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var butao = document.createElement("button")
+    butao.innerText= "teste"
+    
+    butao.style.position = "fixed"
+    butao.style.top = "200px";
+    butao.style.left = "200px";
+    butao.style.backgroundColor = "black";
+    butao.style.color = "white";
+
+    
+    document.body.append(butao)
+
+
+    butao.addEventListener("click",function(){
+        setTimeout(function(){
+            var DIVs = document.querySelectorAll("div");
+            var As = document.querySelectorAll("a");
+            var Ps = document.querySelectorAll("p");
+            for(div of DIVs){
+                div.style.color = "orange";
+            }
+          
+            for(div of As){
+                div.style.color = "orange";
+            }
+          
+            for(div of Ps){
+                div.style.color = "orange";
+            }
+          
+            
+        }, 100);
+    });
+
+
+
+    </script>
+</body>
+</html>

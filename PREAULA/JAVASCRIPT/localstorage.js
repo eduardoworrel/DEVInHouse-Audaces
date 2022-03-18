@@ -8,6 +8,7 @@ const RepositorioEmVariavelEspelhoDoStorage = [];
 //adiciona ação de clique ao botão
 $adicionar.addEventListener("click", function () {
     if ($input.value) {
+        
         RepositorioEmVariavelEspelhoDoStorage.push(input.value)
         localStorage.setItem("array", JSON.stringify(RepositorioEmVariavelEspelhoDoStorage))
     }

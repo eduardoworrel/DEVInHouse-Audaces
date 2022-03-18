@@ -1,5 +1,10 @@
 {
     "nome" : "eduardo",
-    "idade" : 25
+    "idade" : 25,
+    "array" : [1,2,3,{"propriedade":7},5,6,7,8,9],
+    "outro": {
+        "filhoDeOutro":[]
+    },
+    "eh verdade": true
 }
 
