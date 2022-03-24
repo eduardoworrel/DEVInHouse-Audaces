@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #personagem{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            background-size: 100%;
+            background-image: url("images/down.png");
+        }
+    </style>
+</head>
+<body>
+    <div id="personagem"></div>
+    <script>
+        let x = 0;
+        let y = 0;
+        let move = null
+        const personagem = document.querySelector("#personagem");
+        
+        setInterval(()=>{
+           
+            switch(move){
+                case "desce":
+                    personagem.style.top = ++x  + "px";
+                break;
+                case "sobe":
+                    personagem.style.top = --x + "px";
+                break;
+                case "direita":
+                    personagem.style.left = ++y + "px";
+                break;
+                case "esquerda":
+                    personagem.style.left = --y + "px";
+                break;
+                
+            }
+        },1)
+
+        function stop(){
+            move = false
+           
+        }
+        
+        window.addEventListener("keyup",(e)=>{
+            stop()
+        })
+        window.addEventListener("keydown",(e)=>{
+          
+            if(e.key == "ArrowDown"){
+                move = "desce"
+                personagem.style.backgroundImage = 'url("./images/down.png")'
+            }
+
+            if(e.key == "ArrowUp"){
+                move = "sobe"
+                personagem.style.backgroundImage = 'url("./images/up.png")'
+
+            }
+
+            if(e.key == "ArrowLeft"){
+                move = "esquerda"
+                personagem.style.backgroundImage = 'url("./images/left.png")'
+            }
+
+            if(e.key == "ArrowRight"){
+                move = "direita"
+                personagem.style.backgroundImage = 'url("./images/right.png")'
+
+            }
+        })
+       
+     
+      
+    </script>
+</body>
+</html>
