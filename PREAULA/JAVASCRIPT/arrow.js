@@ -23,7 +23,8 @@ processaTextoDepoisDe2Segundos("oi", texto => alert(texto + "!"))
 window.addEventListener("keypress", (e) => console.log(e.key))
 
 function retorna2Numeros(callback){
-    callback(2,6)
+    const resultado = callback(2,6)
+    return resultado / 0.2 * Math.PI
 }
 let resultado1 = retorna2Numeros((n1,n2)=> n1 * n2 )
 let resultado2 = retorna2Numeros((n1,n2)=> n1 % n2 )
