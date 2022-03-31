@@ -1,3 +1,15 @@
+function ab(a,b,c = 0,t = 0,u = 0){
+    console.log(a)
+    console.log(b)
+    console.log(c)
+    console.log(t)
+    console.log(u)
+}
+
+ab([])
+
+
+
 let oi = function oi(){}
 oi = function (){}
 
@@ -46,6 +58,7 @@ function pegaItensDeMenu(tipoUsuario,callback){
         //[home, gerenciar produtos, gerenciar usuários]
         itens = buscaDoBancoDeAdministadores()
     }
+
     callback(itens)
 }
 
